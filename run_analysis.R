@@ -36,5 +36,5 @@ result2<- summarize_each(  group_by(resultant, ActivityId,subjectId ), funs(mean
 #names(result2 )<-   sapply( names(result2 ) , function(x){ paste("Averaged",x,sep=":")})
 activity_labels <- read.table("activity_labels.txt", col.names=c("ActivityId","Activity"))
 result2_with_label <-merge( activity_labels ,result2, by="ActivityId" )
-write.table( result2_with_label, "Averaged_data.txt" )
+write.table( result2_with_label, "Averaged_data.txt" ,row.name=FALSE)
 }
